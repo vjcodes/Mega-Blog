@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../Logo";
 import Container from "../container/Container";
+import LogoutBtn from "./LogoutBtn";
 
 const Header = () => {
   const authStatus = useSelector((state) => state.auth.status);
@@ -23,6 +24,11 @@ const Header = () => {
       name: "Signup",
       slug: "/signup",
       active: !authStatus,
+    },
+    {
+      name: "Add post",
+      slug: "/add-post",
+      active: authStatus,
     },
     {
       name: "All Posts",
